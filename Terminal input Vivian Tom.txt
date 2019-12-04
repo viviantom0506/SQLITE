@@ -1,0 +1,43 @@
+﻿Vivians-Air:~ viviantom$ sqlite3
+SQLite version 3.24.0 2018-06-04 14:10:15
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open hw6.db
+sqlite> CREATE TABLE EVALUATIONS(
+   ...> Timestamp TEXT NOT NULL,
+   ...> Presentation_was_well_oragnized INT NOT NULL,
+   ...> Speaker_spoke_clearly_and_was_easy_to_understand INT NOT NULL,
+   ...> Presenter_was_enthusiastic_about_the_topic INT NOT NULL,
+   ...> I_learned_something_new_today INT NOT NULL,
+   ...> Learned_new TEXT NOT NULL,
+   ...> Worked_well TEXT NOT NULL,
+   ...> Improvements TEXT NOT NULL,
+   ...> Additional_comments TEXT);;
+
+
+sqlite> .tables
+sqlite> .schema
+sqlite> .mode csv
+sqlite> .import /Users/viviantom/Desktop/SQL/4677.csv EVALUATIONS
+sqlite> SELECT * FROM EVALUATIONS
+   ...> ;
+sqlite> SELECT avg(Presentation_was_well_oragnized) FROM EVALUATIONS;
+
+
+sqlite> SELECT avg(Presenter_was_enthusiastic_about_the_topic) FROM EVALUATIONS;
+
+
+sqlite> SELECT avg(Speaker_spoke_clearly_and_was_easy_to_understand) FROM EVALUATIONS;
+ 
+sqlite> SELECT min(Presentation_was_well_oragnized) FROM EVALUATIONS;
+ 
+sqlite> SELECT min(Presenter_was_enthusiastic_about_the_topic) FROM EVALUATIONS;
+ 
+sqlite> SELECT min(Speaker_spoke_clearly_and_was_easy_to_understand) FROM EVALUATIONS;
+ 
+sqlite> SELECT max(Speaker_spoke_clearly_and_was_easy_to_understand) FROM EVALUATIONS;
+ 
+sqlite> SELECT max(Presenter_was_enthusiastic_about_the_topic) FROM EVALUATIONS;
+ 
+sqlite> SELECT max(Presentation_was_well_oragnized) FROM EVALUATIONS;
